@@ -1,4 +1,4 @@
-from config import SPEED
+from config import SPEED, JUMP_HEIGHT
 
 class Player():
     def __init__(self, x, y):
@@ -23,6 +23,7 @@ class Player():
             self.x -= SPEED
     
     def jump(self):
+        self.y -= JUMP_HEIGHT
         print('Jump, jump! Tora is jumping!!')
 
 

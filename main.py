@@ -13,12 +13,13 @@ Tora = Player(0, HEIGHT-SQUARE_SIZE)
 
 while running:
     screen.fill(MAIN_COLOR)
-    # Single key press 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == pygame.KEYUP:
-            Tora.jump()
+        # Single key press 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                Tora.jump()
 
     # Key hold
     keys = pygame.key.get_pressed()
@@ -33,3 +34,5 @@ while running:
     
     pygame.display.flip()
 pygame.quit()
+
+
