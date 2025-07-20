@@ -21,6 +21,9 @@ class Player():
     def move_left(self):
         if self.x >= 0:
             self.x -= SPEED
+    
+    def jump(self):
+        print('Jump, jump! Tora is jumping!!')
 
 
 

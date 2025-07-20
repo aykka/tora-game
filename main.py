@@ -13,9 +13,14 @@ Tora = Player(0, HEIGHT-SQUARE_SIZE)
 
 while running:
     screen.fill(MAIN_COLOR)
+    # Single key press 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYUP:
+            Tora.jump()
+
+    # Key hold
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         Tora.move_left()
