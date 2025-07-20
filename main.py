@@ -27,6 +27,8 @@ while running:
         Tora.move_left()
     elif keys[pygame.K_RIGHT]:
         Tora.move_right()
+
+    Tora.apply_gravity()
         
     # Draw the square   
     pygame.draw.rect(screen, COLOR, (Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
@@ -34,5 +36,3 @@ while running:
     
     pygame.display.flip()
 pygame.quit()
-
-
