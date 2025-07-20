@@ -15,11 +15,13 @@ class Player():
     def get_position(self):
         return (self.x, self.y)
     
-    def increment_position(self):
+    def move_right(self):
         self.x += SPEED
 
-    def decrement_position(self):
-        self.x -= SPEED
+    def move_left(self):
+        if self.x >= 0:
+            self.x -= SPEED
+
 
 
     

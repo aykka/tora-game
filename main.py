@@ -18,9 +18,9 @@ while running:
             running = False
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        Tora.decrement_position()
+        Tora.move_left()
     elif keys[pygame.K_RIGHT]:
-        Tora.increment_position()
+        Tora.move_right()
         
     # Draw the square   
     pygame.draw.rect(screen, COLOR, (Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
