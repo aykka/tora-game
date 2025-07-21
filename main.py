@@ -1,5 +1,5 @@
 import pygame
-from config import MAIN_COLOR, WIDTH, HEIGHT, CAPTION, SQUARE_SIZE, COLOR
+from config import *
 from player import Player
 
 pygame.init()
@@ -9,7 +9,7 @@ running = True
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(CAPTION)
 
-Tora = Player(0, HEIGHT-SQUARE_SIZE)
+Tora = Player(0, GROUND_LVL)
 
 player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
