@@ -27,8 +27,12 @@ while running:
     # Key hold
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
+        player_img = pygame.image.load('Assets/Tora_left.png').convert_alpha()
+        player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
         Tora.move_left()
     elif keys[pygame.K_RIGHT]:
+        player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
+        player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
         Tora.move_right()
 
     Tora.apply_gravity()

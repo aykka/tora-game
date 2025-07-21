@@ -5,4 +5,4 @@
 - Smooth jump implementation 
 - Add platforms
 - Make Tota interact with platforms
-- Add Tora image
+- ~~Add Tora image~~ 
