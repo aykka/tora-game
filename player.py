@@ -1,4 +1,4 @@
-from config import SPEED, JUMP_HEIGHT, GRAVITY, HEIGHT, SQUARE_SIZE
+from config import *
 
 class Player():
     def __init__(self, x, y):
@@ -23,9 +23,9 @@ class Player():
             self.x -= SPEED
     
     def jump(self):
-        self.y -= JUMP_HEIGHT
-        print('Jump, jump! Tora is jumping!!')
-
+        if round(self.y) == GROUND_LVL:
+            self.y -= JUMP_HEIGHT
+            
     def apply_gravity(self):
         if self.y < HEIGHT-SQUARE_SIZE:
             self.y += GRAVITY
