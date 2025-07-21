@@ -11,6 +11,9 @@ pygame.display.set_caption(CAPTION)
 
 Tora = Player(0, HEIGHT-SQUARE_SIZE)
 
+player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
+player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
+
 while running:
     screen.fill(MAIN_COLOR)
     for event in pygame.event.get():
@@ -31,8 +34,9 @@ while running:
     Tora.apply_gravity()
         
     # Draw the square   
-    pygame.draw.rect(screen, COLOR, (Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
+    screen.blit(player_img,(Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
 
     
     pygame.display.flip()
 pygame.quit()
+
