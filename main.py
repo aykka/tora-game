@@ -1,6 +1,7 @@
 import pygame
 from config import *
 from player import Player
+from coin import Coin
 
 pygame.init()
 running = True
@@ -13,6 +14,8 @@ Tora = Player(0, GROUND_LVL)
 
 player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
+
+coin = Coin(302, GROUND_LVL-15)
 
 while running:
     screen.fill(MAIN_COLOR)
@@ -39,6 +42,7 @@ while running:
         
     # Draw the square   
     screen.blit(player_img,(Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
+    pygame.draw.circle(screen, coin.color, (coin.x, coin.y), coin.radius)
 
     
     pygame.display.flip()
