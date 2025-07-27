@@ -4,5 +4,5 @@
 - ~~Jump only from the surface~~ 
 - Smooth jump implementation 
 - Add platforms
-- Make Tota interact with platforms
+- Make Tora interact with platforms
 - ~~Add Tora image~~ 

@@ -10,7 +10,8 @@ running = True
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(CAPTION)
 
-Tora = Player(0, GROUND_LVL)
+Tora = Player(0, GROUND_LVL, 'Assets/Tora_right.png')
+Shora = Player(0, GROUND_LVL, 'Assets/Tora_left.png')
 
 player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
