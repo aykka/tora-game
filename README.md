@@ -1,6 +1,7 @@
 # Tora The Toad
 
 ## To do
+- Fix gravity
 - ~~Jump only from the surface~~ 
 - Smooth jump implementation 
 - Add platforms

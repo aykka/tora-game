@@ -10,11 +10,11 @@ running = True
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(CAPTION)
 
-Tora = Player(0, GROUND_LVL, 'Assets/Tora_right.png')
-Shora = Player(0, GROUND_LVL, 'Assets/Tora_left.png')
+Tora = Player(0, GROUND_LVL, 'Assets/Tora_right.png', 'Assets/Tora_left.png')
+Shora = Player(0, GROUND_LVL, 'Assets/Tora_left.png', 'Assets/Tora_right.png')
 
-player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
-player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
+all_sprites = pygame.sprite.Group()
+all_sprites.add(Tora)
 
 coin = Coin(302, GROUND_LVL-15)
 
@@ -30,21 +30,15 @@ while running:
 
     # Key hold
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
-        player_img = pygame.image.load('Assets/Tora_left.png').convert_alpha()
-        player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
-        Tora.move_left()
-    elif keys[pygame.K_RIGHT]:
-        player_img = pygame.image.load('Assets/Tora_right.png').convert_alpha()
-        player_img = pygame.transform.scale(player_img, (SQUARE_SIZE,SQUARE_SIZE))
-        Tora.move_right()
+    all_sprites.update(keys)
 
-    Tora.apply_gravity()
+    all_sprites.draw(screen)
         
     # Draw the square   
-    screen.blit(player_img,(Tora.x, Tora.y, SQUARE_SIZE, SQUARE_SIZE))
+
     pygame.draw.circle(screen, coin.color, (coin.x, coin.y), coin.radius)
 
     
     pygame.display.flip()
 pygame.quit()
+
