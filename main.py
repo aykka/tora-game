@@ -1,7 +1,7 @@
 import pygame
 from config import *
-from player import Player
-from coin import Coin
+from sprites.player import Player
+from sprites.coin import Coin
 
 pygame.init()
 running = True
