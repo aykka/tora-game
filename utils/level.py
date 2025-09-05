@@ -3,7 +3,9 @@ from sprites.coin import Coin
 def getLevel(level_path):
     with open(level_path) as file_object:
         contents = file_object.readlines()
+        y = 0
         for line in contents:
+            x = 0
             print(line.rstrip())
             for symbol in line:
                 if symbol == '-':
@@ -11,8 +13,8 @@ def getLevel(level_path):
                     print('This is block')
                 elif symbol == 'o': 
                     # TODO: CREATE COIN HERE
-                    coin = Coin(34, 56)
-                    print('This is coin')
+                    coin = Coin(x, y)
+                    print(f'This is {coin.x} and {coin.y}')
+                x += 20
+            y += 20
 
-
-getLevel('../levels/1.txt')

@@ -2,6 +2,9 @@ import pygame
 from config import *
 from sprites.player import Player
 from sprites.coin import Coin
+from utils.level import getLevel
+
+getLevel('./levels/1.txt')
 
 pygame.init()
 running = True
