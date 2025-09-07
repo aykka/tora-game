@@ -4,7 +4,6 @@ from sprites.player import Player
 from sprites.coin import Coin
 from utils.level import getLevel
 
-getLevel('./levels/1.txt')
 
 pygame.init()
 running = True
@@ -19,7 +18,10 @@ Shora = Player(0, GROUND_LVL, 'Assets/Tora_left.png', 'Assets/Tora_right.png')
 all_sprites = pygame.sprite.Group()
 all_sprites.add(Tora)
 
-coin = Coin(302, GROUND_LVL-15)
+sprites = getLevel('./levels/1.txt')
+for sprite in sprites:
+    all_sprites.add(sprite)
+
 
 while running:
     screen.fill(MAIN_COLOR)
@@ -37,10 +39,7 @@ while running:
 
     all_sprites.draw(screen)
         
-    # Draw the square   
-
-    pygame.draw.circle(screen, coin.color, (coin.x, coin.y), coin.radius)
-
+    
     
     pygame.display.flip()
 pygame.quit()

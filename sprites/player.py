@@ -53,4 +53,3 @@ class Player(pygame.sprite.Sprite):
     def apply_gravity(self):
         if self.rect.y < GROUND_LVL:
             self.rect.y += GRAVITY # TODO: FIX GRAVITY
-            print(self.rect.y)
