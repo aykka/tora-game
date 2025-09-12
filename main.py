@@ -13,7 +13,6 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(CAPTION)
 
 Tora = Player(0, GROUND_LVL, 'Assets/Tora_right.png', 'Assets/Tora_left.png')
-Shora = Player(0, GROUND_LVL, 'Assets/Tora_left.png', 'Assets/Tora_right.png')
 
 all_sprites = pygame.sprite.Group()
 all_sprites.add(Tora)
