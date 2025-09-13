@@ -1,4 +1,5 @@
 from sprites.coin import Coin
+from sprites.block import Block
 from config import LVL_BLOCK_HEIGHT, LVL_BLOCK_WIDTH
 
 def getLevel(level_path):
@@ -10,14 +11,12 @@ def getLevel(level_path):
             x = 0
             print(line.rstrip())
             for symbol in line:
-                if symbol == '-':
-                    # TODO: CREATE BLOCK HERE
-                    print('This is block')
+                if symbol == '^':
+                    block = Block(x, y)
+                    objects.append(block)
                 elif symbol == 'o': 
-                    # TODO: CREATE COIN HERE
                     coin = Coin(x, y)
                     objects.append(coin)
-                    print(f'This is {coin.x} and {coin.y}')
                 x += LVL_BLOCK_WIDTH
             y += LVL_BLOCK_HEIGHT
     return objects
