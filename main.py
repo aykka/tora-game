@@ -15,11 +15,13 @@ pygame.display.set_caption(CAPTION)
 Tora = Player(0, GROUND_LVL, 'Assets/Tora_right.png', 'Assets/Tora_left.png')
 
 all_sprites = pygame.sprite.Group()
-all_sprites.add(Tora)
 
 sprites = getLevel('./levels/1.txt')
 for sprite in sprites:
     all_sprites.add(sprite)
+
+
+all_sprites.add(Tora)
 
 
 while running:

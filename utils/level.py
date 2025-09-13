@@ -1,4 +1,5 @@
 from sprites.coin import Coin
+from config import LVL_BLOCK_HEIGHT, LVL_BLOCK_WIDTH
 
 def getLevel(level_path):
     objects = []
@@ -17,8 +18,8 @@ def getLevel(level_path):
                     coin = Coin(x, y)
                     objects.append(coin)
                     print(f'This is {coin.x} and {coin.y}')
-                x += 20
-            y += 20
+                x += LVL_BLOCK_WIDTH
+            y += LVL_BLOCK_HEIGHT
     return objects
 
         
