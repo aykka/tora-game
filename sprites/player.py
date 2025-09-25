@@ -25,7 +25,9 @@ class Player(pygame.sprite.Sprite):
             self.move_right()
 
         self.apply_gravity()
-        
+
+    def check_collision(self, sprites):
+        pass     
 
     def set_position(self, x, y):
         if isinstance(x, int) and isinstance(y, int):
