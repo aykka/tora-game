@@ -10,5 +10,5 @@ class Coin(pygame.sprite.Sprite):
         self.image.fill(self.color)
         self.rect = self.image.get_rect(center=(x, y))
     
-    def update(self, keys):
+    def update(self):
         pass 
